@@ -1,0 +1,32 @@
+package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "benchmark",
+    srcs = glob(
+        [
+            "src/*.cc",
+            "src/*.h",
+        ],
+        exclude = ["src/benchmark_main.cc"],
+    ),
+    hdrs = [
+        "include/benchmark/benchmark.h",
+        "include/benchmark/export.h",
+    ],
+    copts = [
+        "-pthread",
+        "-std=c++17",
+    ],
+    includes = [
+        "include",
+    ],
+    linkopts = [
+        "-pthread",
+    ],
+)
+
+cc_library(
+    name = "benchmark_main",
+    srcs = ["src/benchmark_main.cc"],
+    deps = [":benchmark"],
+)
