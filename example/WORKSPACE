@@ -1,0 +1,55 @@
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+git_repository(
+    name = "bazel_build_files",
+    branch = "main",
+    remote = "https://github.com/Dup4/bazel-build-files.git",
+)
+
+git_repository(
+    name = "google_benchmark",
+    branch = "main",
+    remote = "https://github.com/google/benchmark.git",
+)
+
+git_repository(
+    name = "gtest",
+    branch = "main",
+    build_file = "@bazel_build_files//gtest:BUILD.bazel",
+    remote = "https://github.com/google/googletest.git",
+)
+
+git_repository(
+    name = "rapidjson",
+    branch = "master",
+    build_file = "@bazel_build_files//rapidjson:BUILD.bazel",
+    remote = "https://github.com/Tencent/rapidjson.git",
+)
+
+git_repository(
+    name = "cJSON",
+    branch = "master",
+    build_file = "@bazel_build_files//cJSON:BUILD.bazel",
+    remote = "https://github.com/DaveGamble/cJSON.git",
+)
+
+git_repository(
+    name = "simdjson",
+    branch = "master",
+    build_file = "@bazel_build_files//simdjson:BUILD.bazel",
+    remote = "https://github.com/simdjson/simdjson.git",
+)
+
+git_repository(
+    name = "yyjson",
+    branch = "master",
+    build_file = "@bazel_build_files//yyjson:BUILD.bazel",
+    remote = "https://github.com/ibireme/yyjson.git",
+)
+
+git_repository(
+    name = "gflags",
+    branch = "master",
+    build_file = "@bazel_build_files//gflags:BUILD.bazel",
+    remote = "https://github.com/gflags/gflags.git",
+)
