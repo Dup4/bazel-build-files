@@ -1,4 +1,4 @@
-# https://github.com/fmtlib/fmt
+# https://github.com/fmtlib/fmt.git
 package(default_visibility = ["//visibility:public"])
 
 cc_library(
